@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_take_photo"
+        android:icon="@android:drawable/ic_menu_camera"
+        android:orderInCategory="100"
+        android:title="Photo"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_edit"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:orderInCategory="100"
+        android:title="Edit"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_submit"
+        android:icon="@drawable/fui_ic_check_circle_black_128dp"
+        android:orderInCategory="100"
+        android:title="Submit"
+        app:showAsAction="always" />
+</menu>
