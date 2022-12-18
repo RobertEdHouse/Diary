@@ -35,9 +35,10 @@ public class Entry implements Serializable {
     }
     @SuppressLint("SimpleDateFormat")
     private void setTime(){
-        Date date = Calendar.getInstance().getTime();
-        this.date=date.getDay()+" ";
-        switch (date.getMonth()){
+        DateFormat dateFormat = new SimpleDateFormat("dd ");
+        this.date= dateFormat.format(Calendar.getInstance().getTime());
+        dateFormat = new SimpleDateFormat("MM");
+        switch (Integer.parseInt(dateFormat.format(Calendar.getInstance().getTime()))){
             case 1:
                 this.date+="січня";
                 break;
@@ -75,7 +76,7 @@ public class Entry implements Serializable {
                 this.date+="грудня";
                 break;
         }
-        DateFormat dateFormat = new SimpleDateFormat(" yyy");
+        dateFormat = new SimpleDateFormat(" yyy");
         this.date += dateFormat.format(Calendar.getInstance().getTime());
         dateFormat = new SimpleDateFormat("HH:mm:ss");
         time = dateFormat.format(Calendar.getInstance().getTime());
