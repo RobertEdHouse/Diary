@@ -174,10 +174,12 @@ public class NewEntryFragment extends Fragment implements FragmentPhoto {
         photoLayout.addView(image);
 
     }
+    @SuppressLint("SimpleDateFormat")
     private String makeDate(){
-        Date date = Calendar.getInstance().getTime();
-        String dateStr=date.getDay()+" ";
-        switch (date.getMonth()){
+        DateFormat dateFormat = new SimpleDateFormat("dd ");
+        String dateStr= dateFormat.format(Calendar.getInstance().getTime());
+        dateFormat = new SimpleDateFormat("MM");
+        switch (Integer.parseInt(dateFormat.format(Calendar.getInstance().getTime()))){
             case 1:
                 dateStr+="січня";
                 break;
@@ -215,8 +217,7 @@ public class NewEntryFragment extends Fragment implements FragmentPhoto {
                 dateStr+="грудня";
                 break;
         }
-        @SuppressLint("SimpleDateFormat")
-        DateFormat dateFormat = new SimpleDateFormat(" yyy");
+        dateFormat = new SimpleDateFormat(" yyy");
         dateStr += dateFormat.format(Calendar.getInstance().getTime());
         return dateStr;
     }
